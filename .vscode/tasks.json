@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "-Wall",
+          "-Wextra",
+          "-g3",
+          "/home/josmiguelmm/Cursos-Platzi/c++practico/sources/main.cpp",
+          "/home/josmiguelmm/Cursos-Platzi/c++practico/sources/src/Player.cpp",
+          "-o",
+          "/home/josmiguelmm/Cursos-Platzi/c++practico/sources/output/main"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+        "label": "Run",
+        "type": "shell",
+        "command": "./sources/output/main",
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+  
