@@ -24,10 +24,10 @@ void Player::CallInput()
     switch (UseInput)
     {
     case 'w':
-        y = y + 1;
+        y = y - 1;
         break;
     case 's':
-        y = y - 1;
+        y = y + 1;
         break;
     case 'a':
         x = x - 1;
@@ -39,5 +39,5 @@ void Player::CallInput()
         cout << "Valor incorrecto" << endl;
         break;
     }
-    cout << "Estas en la posicion X:" << x << " Y: " << y << endl;
+    //cout << "Estas en la posicion X:" << x << " Y: " << y << endl;
 }

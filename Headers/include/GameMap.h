@@ -8,10 +8,13 @@ private:
     /* data */
 public:
     MapCell cells[15][10];
-    MapCell* PlayerCell;
+    MapCell *PlayerCell;
     GameMap(/* args */);
     void Drawmap();
     void SetPlayerCell(int Playerx, int Playery);
+
+protected:
+    void LoadMapFromFile();
 };
 
 #endif
