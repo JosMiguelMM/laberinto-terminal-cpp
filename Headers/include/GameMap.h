@@ -11,7 +11,8 @@ public:
     MapCell *PlayerCell;
     GameMap(/* args */);
     void Drawmap();
-    void SetPlayerCell(int Playerx, int Playery);
+    bool SetPlayerCell(int Playerx, int Playery);
+    void DrawIntro();
 
 protected:
     void LoadMapFromFile();

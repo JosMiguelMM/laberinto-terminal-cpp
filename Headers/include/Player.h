@@ -4,9 +4,10 @@
 class Player
 {
 public:
-    int x, y;
+    int x, y, lastx, lasty;
     Player();
     void CallInput();
+    void ResetToSafePosition();
 
 protected:
 private:

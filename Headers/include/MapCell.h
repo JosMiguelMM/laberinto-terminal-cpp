@@ -4,8 +4,9 @@
 class MapCell
 {
 public:
-    int id;
+    char id;
     MapCell(/* args */);
+    bool IsBlook();
 };
 
 #endif
