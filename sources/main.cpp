@@ -15,8 +15,9 @@ int main()
     GameMap Map;
 
     Map.DrawIntro();
+    Map.Drawmap();
 
-    while (isGameOver == false)
+    while (Map.IsGameOver == false)
     {
         Hero.CallInput();
         if (Map.SetPlayerCell(Hero.x, Hero.y))

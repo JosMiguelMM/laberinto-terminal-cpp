@@ -8,6 +8,7 @@ GameMap ::GameMap()
 {
     LoadMapFromFile();
     // PlayerCell = NULL;
+    IsGameOver = false;
 }
 
 void GameMap::DrawIntro()
@@ -46,21 +47,31 @@ void GameMap::Drawmap()
 
 bool GameMap::SetPlayerCell(int Playerx, int Playery)
 {
-    if (cells[Playery][Playerx].IsBlook() == false)
+    if (cells[Playery][Playerx].id == 'T')
     {
-        if (PlayerCell != NULL)
-        {
-            PlayerCell->id = ' ';
-        }
-
-        // cout << "Las coordenadas del jugador estan en: " << Playerx << "  " << Playery << endl;
-        PlayerCell = &cells[Playery][Playerx];
-        PlayerCell->id = '7';
+        cout << "Victoria" << endl;
+        DrawVictory();
+        IsGameOver = true;
         return true;
     }
     else
     {
-        return false;
+        if (cells[Playery][Playerx].IsBlook() == false)
+        {
+            if (PlayerCell != NULL)
+            {
+                PlayerCell->id = ' ';
+            }
+
+            // cout << "Las coordenadas del jugador estan en: " << Playerx << "  " << Playery << endl;
+            PlayerCell = &cells[Playery][Playerx];
+            PlayerCell->id = '7';
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
 
@@ -96,5 +107,27 @@ void GameMap::LoadMapFromFile()
     else
     {
         cout << "FATAL ERROR: MAP FILE COULD NOT BE LOADED!" << endl;
+    }
+}
+
+void GameMap::DrawVictory()
+{
+    string line;
+
+    // ofstream Arch("Victory.txt");
+
+    ifstream Myfile("Victory.txt");
+
+    if (Myfile.is_open())
+    {
+        while (getline(Myfile, line))
+        {
+
+            cout << line << endl;
+        }
+    }
+    else
+    {
+        cout << "FATAL ERROR:  FILE COULD NOT BE LOADED!" << endl;
     }
 }
